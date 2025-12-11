@@ -1,8 +1,8 @@
-# 📋 Mémo de Déploiement : Windows (VSCode) vers Ubuntu (VM)
+# 📋 Mémo de Déploiement : Dashboard Triple A
 
-### 1\. PRÉPARATION (Sur ton PC / VSCode)
+### 1\. PRÉPARATION 
 
-Avant de copier les fichiers, vérifie ces 3 points dans ton code :
+Avant de copier les fichiers, vérifie ces 3 points :
 
   * **[ ] Structure des dossiers :** Ne change rien à l'organisation standard.
 
@@ -26,16 +26,7 @@ Avant de copier les fichiers, vérifie ces 3 points dans ton code :
     if __name__ == "__main__":
         app.run(host='0.0.0.0', port=5000) # 0.0.0.0 est CRUCIAL sur une VM
     ```
-
-  * **[ ] Générer la liste des dépendances :**
-    Ouvre ton terminal VSCode et tape :
-
-    ```bash
-    pip freeze > requirements.txt
-    ```
-
-    *(Cela crée un fichier listant toutes les librairies nécessaires).*
-
+    
 -----
 
 ### 2\. INSTALLATION (Sur la VM Ubuntu)
@@ -111,6 +102,3 @@ Si tu as une erreur "File not found" (Fichier introuvable) alors que le fichier 
     **Vérifie tes noms de fichiers et tes imports \!**
 
 -----
-
-
-**Veux-tu que je t'explique comment faire pour que ton script continue de tourner même si tu fermes la fenêtre du terminal de la VM (en utilisant `nohup` ou `systemd`) ?**
