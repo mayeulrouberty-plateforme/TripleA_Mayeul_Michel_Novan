@@ -1,0 +1,147 @@
+/* Reset simple */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page globale */
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #d9d9d9;              /* gris clair métal */
+    color: #222;
+}
+
+/* Conteneur principal sur une hauteur fixe (sans scroll si possible) */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 8px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    padding: 6px 0;
+    margin-bottom: 6px;
+    background: #eeeeee;
+    border: 1px solid #bbbbbb;
+}
+
+header h1 {
+    font-size: 20px;
+    font-weight: normal;
+}
+
+/* LAYOUT PRINCIPAL : 2 colonnes compactes */
+main {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;  /* colonne gauche un peu plus large */
+    gap: 6px;
+    flex: 1;
+}
+
+/* Colonne gauche et droite via sections ordonnées */
+.carte {
+    background: #f5f5f5;
+    border: 1px solid #b3b3b3;
+    padding: 8px;
+    font-size: 13px;
+    align-content: center;
+}
+
+.carte2 {
+    background: #f5f5f5;
+    border: 1px solid #b3b3b3;
+    padding: 8px;
+    font-size: 13px;
+}
+
+
+h2 {
+    font-size: 15px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+/* Stats en gras */
+.stats {
+    font-weight: bold;
+}
+
+/* Meters sobres */
+meter {
+    width: 100%;
+    height: 14px;
+}
+
+/* Centrage simple */
+.center {
+    text-align: center;
+    margin-top: 4px;
+}
+
+/* Blocs pour processus et fichiers */
+.proc {
+    background: #eaeaea;
+    border: 1px solid #c0c0c0;
+    padding: 5px;
+    margin: 3px 0;
+    font-size: 12px;
+}
+
+/* FOOTER compact */
+footer {
+    text-align: center;
+    padding: 6px 0;
+    margin-top: 6px;
+    font-size: 12px;
+    background: #eeeeee;
+    border: 1px solid #bbbbbb;
+}
+
+.w3-container {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    margin-top: 10px;
+    height: 25px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    line-height: 25px; /* Centrage vertical du texte */
+    transition: width 0.5s ease;
+}
+
+/* Couleurs demandées par l'utilisateur */
+.bar-green { background-color: #2ecc71; } /* 0-49% */
+.bar-orange { background-color: #f39c12; } /* 50-74% */
+.bar-red { background-color: #e74c3c; }    /* 75-100% */
+
+/* Désactiver les gros emojis sur petits écrans pour garder la hauteur */
+@media (max-width: 900px) {
+    header h1 {
+        font-size: 18px;
+    }
+    h2 {
+        font-size: 14px;
+    }
+    body {
+        font-size: 13px;
+    }
+}
+apps-fileview.texmex_20251127.00_p0
+style.css
+Affichage de style.css

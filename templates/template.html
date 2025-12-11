@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="refresh" content="30"> -->
+    <title>Triple A Dashboard - Ubuntu VM</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Triple A Dashboard - {{ dateHeureActuelle }}</h1>
+        </header>
+
+        <main>
+            <!-- Les infos système -->
+            <section class="carte">
+                <h2>Informations système</h2>
+                <p>
+                    <p>Nom utilisateur : <span class="stats">{{ nomOrdi }}</span> |</p>
+                    <p>OS : <span class="stats">{{ nomOs }}</span> |</p>
+                    <p>Cet ordinateur est allumé depuis : <span class="stats">{{ dateHeureBoot }}</span> | </p>
+                    <p>Nb utilisateurs connectés : <span class="stats">{{nombreUtilisateur}}</span></p>
+                </p>
+            </section>
+
+            <!-- Le processeur -->
+            <section class="carte">
+                <h2>CPU</h2>
+                <p>Il y a <span class="stats">{{ processeurCoeur }}</span> coeurs cadencés à 
+                    <span class="stats">{{ processeurFrequence }} MHz</span></p>
+                    <p>---</p>
+                    <h3>Poucentage d'utilisation en cours : </h3>
+                <div class="w3-container">
+                    <div class="progress-bar {{ couleurProc }}" style="width: {{ processeurPourCent }}%;">
+                        {{ processeurPourCent }}%
+                    </div>
+                </div>
+            </section>
+
+            <!-- La RAM -->
+            <section class="carte">
+                <h2>RAM</h2>
+                <p>
+                    <span class="stats">{{ ramUtilisee }} Go utilisée </span> / 
+                    <span class="stats">{{ ramTotale }} Go disponible.</span>
+                </p>
+                <div class="w3-container">
+                    <div class="progress-bar {{ couleurRam }}" style="width: {{ ramPourCent }}%;">
+                        {{ ramPourCent }}%
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Les adresses IP -->
+            <section  class="carte">
+                <h2>Réseau</h2>
+                <p>Adresse IpV4: <span class="stats">{{ adresseIpv4 }}</span></p>
+                <p>---</p>
+                <p>Adresse IpV6: <span class="stats">{{ adresseIpv6 }}</span></p>
+                <p>---</p>
+            </section>
+
+            <!-- Les processus -->
+            <section class="carte2">
+                <h2>Les processus les plus gourmands :</h2>
+                
+                <div class="proc">
+                    1. <strong>{{ nom_1 }}</strong> <small>(PID: {{ pid_1 }})</small> 
+                    - CPU: <span class="stats">{{ cpu_1 }}%</span>
+                </div>
+
+                <div class="proc">
+                    2. <strong>{{ nom_2 }}</strong> <small>(PID: {{ pid_2 }})</small> 
+                    - CPU: <span class="stats">{{ cpu_2 }}%</span>
+                </div>
+
+                <div class="proc">
+                    3. <strong>{{ nom_3 }}</strong> <small>(PID: {{ pid_3 }})</small> 
+                    - CPU: <span class="stats">{{ cpu_3 }}%</span>
+                </div>
+            </section>
+
+            <!-- L'explorateur de fichiers -->
+            <section class="carte2">
+                <h2>Analyse du dossier</h2>
+                <p>Dossier analysé : C:/Users/miche/Downloads</p>
+                <p>Total : <span class="stats">{{ total }}</span> fichiers</p>
+                
+                <div style="margin-top: 10px;">
+                    {% for item in listeExtensions %}
+                        <div class="proc">
+                            <strong>{{ item.extension }}</strong> : 
+                            <span class="stats">{{ item.quantite }}</span> fichiers 
+                            <small>({{ item.pourcentage }}%)</small>
+                            
+                            <div class="w3-container" style="height: 5px; margin-top:2px;">
+                                <div class="progress-bar bar-green" style="width: {{ item.pourcentage }}%;"></div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </section>
+        </main>
+
+        <footer>
+           <p>Actualisation automatique toutes les 5 secondes</p>
+           <p>Mayeul // Novan // Michel</p> 
