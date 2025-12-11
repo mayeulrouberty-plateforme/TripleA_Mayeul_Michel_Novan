@@ -1,9 +1,3 @@
-Bien sûr, voici un mémo synthétique "Copier-Coller" pour ta procédure de déploiement.
-
-Tu peux garder ce texte de côté pour le suivre étape par étape.
-
------
-
 # 📋 Mémo de Déploiement : Windows (VSCode) vers Ubuntu (VM)
 
 ### 1\. PRÉPARATION (Sur ton PC / VSCode)
@@ -117,5 +111,6 @@ Si tu as une erreur "File not found" (Fichier introuvable) alors que le fichier 
     **Vérifie tes noms de fichiers et tes imports \!**
 
 -----
+
 
 **Veux-tu que je t'explique comment faire pour que ton script continue de tourner même si tu fermes la fenêtre du terminal de la VM (en utilisant `nohup` ou `systemd`) ?**
